@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Infinity Core Auth</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #terminal {
+      white-space: pre-wrap;
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const terminal = document.getElementById("terminal");
+    const messages = [
+      ">> Connecting to INFINITY CORE...",
+      ">> Handshaking...",
+      ">> Authenticating user...",
+      ">> Access token verified.",
+      ">> INFINITY CORE SECURED 🔒",
+      "",
+      "Welcome, Commander."
+    ];
+    let i = 0;
+    function typeMessage() {
+      if (i < messages.length) {
+        terminal.innerText += messages[i] + "\n";
+        i++;
+        setTimeout(typeMessage, 1000);
+      }
+    }
+    setTimeout(typeMessage, 1000);
+  </script>
+</body>
+</html>
